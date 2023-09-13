@@ -1,35 +1,51 @@
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-import static org.junit.Assert.assertEquals;
 
 public class RunTest {
 
-    @Before
+    @BeforeEach
       public void beforeClass() {
-        System.out.println("Before class");
+
+        System.out.println("Before test");
     }
 
-    @After
+    @AfterEach
     public void afterClass() {
-        System.out.println("After class");
+        System.out.println("After test");
     }
 
     @Test
-    public void Test1() {
-        System.out.println("1");
-        assertEquals("AW", "AW");
+    public void test1 () {
+        System.out.println ("1й тест");
+        Assertions.assertEquals("test", "test");
     }
 
     @Test
-    public void Test2() {
-        System.out.println("2");
-        assertEquals("AW", "A@W");
+    public void test2 () {
+        System.out.println ("2й тест");
+        Assertions.assertEquals("test", "test2");
     }
     @Test
-    public void main(){
+    public void test3 (){
+        int a = 100;
+        int b = 200;
+        int sum = a + b;
+        Assertions.assertTrue(sum==300);
+    }
+    @Test
+    public void test4 () {
+        int a = 100;
+        int b = 200;
+        int sum = a + b;
+        Assertions.assertTrue(sum == 301);
+    }
+
+    @Test
+    public void main() {
         open("https://demoqa.com/automation-practice-form");
     }
 }
