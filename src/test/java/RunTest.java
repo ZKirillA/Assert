@@ -41,7 +41,7 @@ public class RunTest {
         int a = 100;
         int b = 200;
         int sum = a + b;
-        Assertions.assertTrue(sum == 301);
+        Assertions.assertTrue(sum == 302);
     }
 
     @Test
